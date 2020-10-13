@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.12, < 0.13"
+  required_version = ">= 0.12, < 0.14"
 }
 
 provider "aws" {
@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"
+  ami           = "ami-07efac79022b86107"
   instance_type = "t2.micro"
 
   tags = {

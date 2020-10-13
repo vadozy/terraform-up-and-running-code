@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.12, < 0.13"
+  required_version = ">= 0.12, < 0.14"
 }
 
 provider "aws" {
@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 resource "aws_launch_configuration" "example" {
-  image_id        = "ami-0c55b159cbfafe1f0"
+  image_id        = "ami-07efac79022b86107"
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.instance.id]
 
@@ -83,7 +83,7 @@ resource "aws_lb_listener" "http" {
 
     fixed_response {
       content_type = "text/plain"
-      message_body = "404: page not found"
+      message_body = "404: page not found (from aws_lb_listener.http fixed-response)"
       status_code  = 404
     }
   }
